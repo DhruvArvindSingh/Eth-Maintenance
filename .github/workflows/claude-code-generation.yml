@@ -47,7 +47,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -56,7 +55,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
           pip install boto3 requests botocore
 
       - name: Extract task description
@@ -88,8 +86,8 @@ jobs:
           echo "Project structure:" > project_context.txt
           tree -I 'node_modules|.git' -L 3 >> project_context.txt || ls -la >> project_context.txt
           
-          echo "Package.json content:" >> project_context.txt
-          cat package.json >> project_context.txt
+          echo "Repository contains multiple projects:" >> project_context.txt
+          find . -name "package.json" -not -path "./node_modules/*" >> project_context.txt
 
       - name: Generate code with Claude
         env:
