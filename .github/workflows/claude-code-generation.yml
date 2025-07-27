@@ -43,12 +43,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -56,7 +50,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
           pip install boto3 requests botocore
 
       - name: Extract task description
@@ -88,8 +81,8 @@ jobs:
           echo "Project structure:" > project_context.txt
           tree -I 'node_modules|.git' -L 3 >> project_context.txt || ls -la >> project_context.txt
           
-          echo "Package.json content:" >> project_context.txt
-          cat package.json >> project_context.txt
+          echo "Repository contains multiple projects:" >> project_context.txt
+          find . -name "package.json" -not -path "./node_modules/*" >> project_context.txt
 
       - name: Generate code with Claude
         env:
@@ -117,7 +110,7 @@ jobs:
                     'mode': 'standard'
                 }
             )
-            return boto3.client('bedrock-runtime', region_name=os.environ['AWS_DEFAULT_REGION'], config=config)
+            return boto3.client('bedrock-runtime', region_name=os.environ.get('AWS_DEFAULT_REGION', os.environ.get('AWS_REGION')), config=config)
           
           def read_file_safely(filepath, max_lines=100):
               """Read file content safely, limiting lines for context"""
@@ -198,12 +191,28 @@ jobs:
                   ]
               }
               
-              response = client.invoke_model(
-                  body=json.dumps(body),
-                  modelId=os.environ.get('AWS_BEDROCK_MODEL_ID', 'anthropic.claude-3-sonnet-20240229-v1:0'),
-                  accept='application/json',
-                  contentType='application/json'
-              )
+              # Try to use inference profile first, fallback to direct model ID
+              model_id = os.environ.get('AWS_BEDROCK_MODEL_ID', 'us.anthropic.claude-3-5-sonnet-20241022-v2:0')
+              
+              try:
+                  response = client.invoke_model(
+                      body=json.dumps(body),
+                      modelId=model_id,
+                      accept='application/json',
+                      contentType='application/json'
+                  )
+              except Exception as e:
+                  if 'inference profile' in str(e).lower():
+                      # Try with a cross-region inference profile
+                      model_id = 'us.anthropic.claude-3-5-sonnet-20241022-v2:0'
+                      response = client.invoke_model(
+                          body=json.dumps(body),
+                          modelId=model_id,
+                          accept='application/json',
+                          contentType='application/json'
+                      )
+                  else:
+                      raise e
               
               response_body = json.loads(response.get('body').read())
               return response_body['content'][0]['text']
