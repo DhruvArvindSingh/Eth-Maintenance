@@ -1,0 +1,261 @@
+Project structure:
+.
+├── CLAUDE_AUDIT_RESULTS.md
+├── Chainlink-Modules
+│   └── Chainlink-VRFs
+│       └── Chainlink-VRFs
+├── Hooks-LP-Ops-Uniswap-v2-v3
+│   ├── Hook-Uniswap-liquidity-pool-sim-Eth_Maintain
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── __tests__
+│   │   ├── index.js
+│   │   ├── jest.config.mjs
+│   │   ├── package.json
+│   │   ├── pnpm-lock.yaml
+│   │   ├── src
+│   │   └── uniswap-lite
+│   └── Uniswap-analytics-hooks
+│       ├── SocialCalcActivity.py
+│       ├── XOCom.py
+│       ├── activity
+│       ├── constants.py
+│       ├── create-dev-env.pl
+│       ├── instance.py
+│       ├── intero.py
+│       ├── interoperability
+│       ├── locale
+│       ├── localized_strings_file.py
+│       ├── logic.py
+│       ├── news
+│       ├── po
+│       ├── result.py
+│       ├── server.py
+│       ├── setup.py
+│       ├── todo
+│       └── web
+├── LICENSE
+├── Public-Goods-Module
+│   ├── Govt-Billing-Angular-polygon-deploy
+│   │   ├── Android app apk.apk
+│   │   ├── README.md
+│   │   ├── android
+│   │   ├── angular.json
+│   │   ├── browserslist
+│   │   ├── capacitor.config.json
+│   │   ├── config.xml
+│   │   ├── e2e
+│   │   ├── ionic.config.json
+│   │   ├── ios
+│   │   ├── karma.conf.js
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── removed from package json.txt
+│   │   ├── resources
+│   │   ├── src
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.spec.json
+│   │   ├── tslint.json
+│   │   ├── typings
+│   │   └── v3modules-deploy-at-polygon
+│   ├── account-abstraction-safe-sdk-polygon-zkevm
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── config-overrides.js
+│   │   ├── example.env
+│   │   ├── package.json
+│   │   ├── public
+│   │   ├── src
+│   │   ├── tsconfig.json
+│   │   └── yarn.lock
+│   ├── alarm_viewer
+│   │   ├── Space7.jpg
+│   │   ├── appinfo.json
+│   │   ├── depends.js
+│   │   ├── enyo-sources
+│   │   ├── icon.png
+│   │   ├── images
+│   │   ├── index.html
+│   │   └── testcases.txt
+│   ├── analytics-module
+│   │   ├── SocialCalcActivity.py
+│   │   ├── XOCom.py
+│   │   ├── activity
+│   │   ├── constants.py
+│   │   ├── create-dev-env.pl
+│   │   ├── instance.py
+│   │   ├── intero.py
+│   │   ├── interoperability
+│   │   ├── locale
+│   │   ├── localized_strings_file.py
+│   │   ├── logic.py
+│   │   ├── news
+│   │   ├── po
+│   │   ├── result.py
+│   │   ├── server.py
+│   │   ├── setup.py
+│   │   ├── todo
+│   │   └── web
+│   └── zk-alarm-module
+│       └── scroll-module
+├── README.md
+├── Web3-Billing-Dev-Tools-Android
+│   ├── Invoice-release.apk
+│   ├── README.md
+│   ├── config.xml
+│   ├── dapp-modules
+│   │   ├── compound-iii-defi-module
+│   │   ├── cross-chain-borrow-lend
+│   │   ├── sparklend-analytics-module
+│   │   ├── wormhole-cross-chain-analytics
+│   │   ├── wormhole-scaffold-Eth-maintain
+│   │   └── wormhole-solidity-sdk
+│   ├── ionic.config.json
+│   ├── package.json
+│   ├── resources
+│   │   ├── android
+│   │   ├── icon.png
+│   │   ├── ios
+│   │   └── splash.png
+│   ├── src
+│   │   ├── app
+│   │   ├── assets
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   ├── pages
+│   │   ├── providers
+│   │   ├── service-worker.js
+│   │   └── theme
+│   ├── tsconfig.json
+│   ├── tslint.json
+│   └── uma-superfluid-module
+│       ├── README.md
+│       ├── add-ons
+│       ├── angular.json
+│       ├── firebase.json
+│       ├── hardhat
+│       ├── karma.conf.js
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── src
+│       ├── tsconfig.app.json
+│       ├── tsconfig.json
+│       ├── tsconfig.spec.json
+│       └── uma-analytics-module
+├── Web3-DAO-modules
+│   ├── bacalhau-fvm-nft
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── READMEapp.md
+│   │   ├── READMEhardhat.md
+│   │   ├── READMEnext.md
+│   │   ├── hardhat.config.ts
+│   │   ├── next.config.js
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── pages
+│   │   ├── public
+│   │   ├── styles
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.test.json
+│   │   └── yarn.lock
+│   ├── fevm-data-dao-Maintenance-Service-tools
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── frontend
+│   │   └── hardhat
+│   ├── fvm-analytics-module
+│   │   ├── SocialCalcActivity.py
+│   │   ├── XOCom.py
+│   │   ├── activity
+│   │   ├── constants.py
+│   │   ├── create-dev-env.pl
+│   │   ├── instance.py
+│   │   ├── intero.py
+│   │   ├── interoperability
+│   │   ├── locale
+│   │   ├── localized_strings_file.py
+│   │   ├── logic.py
+│   │   ├── news
+│   │   ├── po
+│   │   ├── result.py
+│   │   ├── server.py
+│   │   ├── setup.py
+│   │   ├── todo
+│   │   └── web
+│   ├── tableland-alarm_viewer
+│   │   ├── Space7.jpg
+│   │   ├── appinfo.json
+│   │   ├── depends.js
+│   │   ├── enyo-sources
+│   │   ├── icon.png
+│   │   ├── images
+│   │   ├── index.html
+│   │   └── testcases.txt
+│   └── tableland-maintenance-notes
+│       ├── README.md
+│       ├── assets
+│       ├── babel.config.js
+│       ├── components
+│       ├── dist
+│       ├── jest.config.js
+│       ├── jest.setup.js
+│       ├── nuxt.config.js
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── pages
+│       ├── plugins
+│       ├── static
+│       ├── store
+│       ├── tailwind.config.js
+│       ├── test
+│       ├── tsconfig.json
+│       └── utils
+├── Web3-maintenance-task-builder
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── ui5-local.yaml
+│   ├── ui5-mock.yaml
+│   ├── ui5.yaml
+│   └── webapp
+│       ├── Component.js
+│       ├── controller
+│       ├── css
+│       ├── i18n
+│       ├── index.html
+│       ├── localService
+│       ├── manifest.json
+│       ├── model
+│       ├── test
+│       └── view
+├── codebase_files.txt
+├── project_context.txt
+└── test_workflow.py
+
+96 directories, 138 files
+Repository contains multiple projects:
+./Public-Goods-Module/account-abstraction-safe-sdk-polygon-zkevm/package.json
+./Public-Goods-Module/Govt-Billing-Angular-polygon-deploy/v3modules-deploy-at-polygon/v3-main/package.json
+./Public-Goods-Module/Govt-Billing-Angular-polygon-deploy/package.json
+./Chainlink-Modules/Chainlink-VRFs/Chainlink-VRFs/hardhat/package.json
+./Web3-maintenance-task-builder/package.json
+./Hooks-LP-Ops-Uniswap-v2-v3/Hook-Uniswap-liquidity-pool-sim-Eth_Maintain/package.json
+./Hooks-LP-Ops-Uniswap-v2-v3/Hook-Uniswap-liquidity-pool-sim-Eth_Maintain/uniswap-lite/package.json
+./Hooks-LP-Ops-Uniswap-v2-v3/Hook-Uniswap-liquidity-pool-sim-Eth_Maintain/uniswap-lite/packages/contracts/package.json
+./Hooks-LP-Ops-Uniswap-v2-v3/Hook-Uniswap-liquidity-pool-sim-Eth_Maintain/uniswap-lite/packages/react-app/package.json
+./Web3-DAO-modules/fevm-data-dao-Maintenance-Service-tools/hardhat/package.json
+./Web3-DAO-modules/fevm-data-dao-Maintenance-Service-tools/frontend/package.json
+./Web3-DAO-modules/tableland-maintenance-notes/package.json
+./Web3-DAO-modules/bacalhau-fvm-nft/package.json
+./Web3-Billing-Dev-Tools-Android/node_modules/socialcalc/package.json
+./Web3-Billing-Dev-Tools-Android/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/cross-chain-borrow-lend/lib/forge-std/lib/ds-test/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/cross-chain-borrow-lend/lib/forge-std/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/cross-chain-borrow-lend/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/compound-iii-defi-module/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/wormhole-scaffold-Eth-maintain/solana/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/wormhole-scaffold-Eth-maintain/sui/package.json
+./Web3-Billing-Dev-Tools-Android/dapp-modules/wormhole-scaffold-Eth-maintain/evm/package.json
+./Web3-Billing-Dev-Tools-Android/uma-superfluid-module/package.json
